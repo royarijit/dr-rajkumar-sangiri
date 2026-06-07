@@ -26,10 +26,10 @@ export default function Appointment() {
   const [errors, setErrors] = useState<Partial<FormData>>({});
 
   const clinicsList = [
-    "Meditrust Medicare, Bankura",
-    "Sristi Diagnostic Centre, Bankura",
+    "Meditrust Medicare Pvt Ltd, Bankura",
+    "Shristi Diagnostic Centre, Bankura",
     "Bankura Nursing Home, Bankura",
-    "Keerthi Medipoint, Bankura"
+    "Keerthi Medi Point Pvt Ltd, Bankura"
   ];
 
   const timeSlots = [

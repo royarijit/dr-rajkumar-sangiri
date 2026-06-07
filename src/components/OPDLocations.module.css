@@ -112,6 +112,13 @@
   margin-top: 4px;
 }
 
+.clinicPhone {
+  font-size: 0.88rem;
+  color: var(--accent-blue);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
 .timingBox {
   border-top: 1px solid var(--border-dark);
   border-bottom: 1px solid var(--border-dark);
@@ -140,16 +147,18 @@
 
 .cardActions {
   margin-top: 24px;
+  display: flex;
+  gap: 12px;
 }
 
 .callBtn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   background: var(--accent-teal);
   color: var(--text-light);
-  width: 100%;
+  flex: 1.2;
   padding: 14px 0;
   border-radius: 16px;
   font-weight: 600;
@@ -160,7 +169,30 @@
 .callBtn:hover {
   background: var(--theme-gradient);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.25);
+  box-shadow: 0 6px 20px rgba(189, 34, 93, 0.25);
+}
+
+.mapBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text-light);
+  border: 1.5px solid var(--border-dark);
+  flex: 1;
+  padding: 14px 0;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+}
+
+.mapBtn:hover {
+  border-color: var(--accent-blue);
+  background: rgba(59, 130, 246, 0.08);
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 
 /* Notice Panel */

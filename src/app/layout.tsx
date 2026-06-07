@@ -24,7 +24,7 @@ const greatVibes = Great_Vibes({
 export const metadata: Metadata = {
   title: "Dr. Rajkumar Sangiri | Consultant Physician | Bankura",
   description: "Consult Dr. Rajkumar Sangiri, a leading Consultant Physician with 19+ years of experience in General Medicine. Expert in diabetes (blood sugar), blood pressure, thyroid, arthritis, and respiratory problems in Bankura.",
-  keywords: "Dr. Rajkumar Sangiri, Consultant Physician, MD General Medicine, Bankura Doctor, Meditrust Medicare Bankura, Sristi Diagnostic centre, Bankura Nursing home, Keerthi Medipoint, Blood Sugar, Blood Pressure, Thyroid, Gastro problem, Respiratory Problem",
+  keywords: "Dr. Rajkumar Sangiri, Consultant Physician, MD General Medicine, Bankura Doctor, Meditrust Medicare Pvt Ltd, Shristi Diagnostic Centre, Bankura Nursing Home, Keerthi Medi Point Pvt Ltd, Blood Sugar, Blood Pressure, Thyroid, Gastro problem, Respiratory Problem",
   openGraph: {
     title: "Dr. Rajkumar Sangiri | Consultant Physician | Bankura",
     description: "Consult Dr. Rajkumar Sangiri, a leading Consultant Physician with 19+ years of experience in General Medicine. Expert care in Bankura.",
