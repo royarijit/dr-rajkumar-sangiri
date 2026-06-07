@@ -1,0 +1,335 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  pointer-events: none;
+  padding: 24px 24px 12px 24px;
+  transition: padding 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scrolled {
+  padding-top: 12px;
+  padding-bottom: 6px;
+}
+
+/* The actual floating pill container - styled as Apple Liquid Glass */
+.container {
+  pointer-events: auto;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  height: 72px;
+  padding: 0 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  /* Apple Glassmorphism Style */
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(28px) saturate(220%);
+  -webkit-backdrop-filter: blur(28px) saturate(220%);
+  
+  /* Apple specular fine border and corner shape */
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 100px;
+  
+  /* Inner specular highlights and soft drop shadows */
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.45),
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.1),
+    0 8px 32px 0 rgba(15, 23, 42, 0.06);
+    
+  transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.4s ease,
+              border-color 0.4s ease,
+              box-shadow 0.4s ease;
+}
+
+.scrolled .container {
+  height: 62px;
+  background: rgba(255, 255, 255, 0.86);
+  border-color: rgba(255, 255, 255, 0.42);
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.55),
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.15),
+    0 16px 48px 0 rgba(15, 23, 42, 0.12);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoIcon {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  transition: transform var(--transition-smooth);
+}
+
+.logo:hover .logoIcon {
+  transform: scale(1.05);
+}
+
+.logoTextWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoText {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  color: var(--text-primary);
+  line-height: 1.1;
+  transition: var(--transition-fast);
+}
+
+.logoSub {
+  font-size: 0.7rem;
+  color: var(--accent-teal);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 1px;
+}
+
+.logo:hover .logoText {
+  color: var(--accent-teal);
+}
+
+/* Desktop Navigation */
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: 12px;
+}
+
+.navLink {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 8px 18px;
+  border-radius: 50px;
+  transition: var(--transition-smooth);
+}
+
+.navLink:hover {
+  color: var(--text-primary);
+  background: rgba(15, 23, 42, 0.04);
+}
+
+/* Active Nav Link Styling like the user image */
+.activeNavLink {
+  background: var(--theme-gradient);
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px var(--accent-teal-glow);
+}
+
+.activeNavLink:hover {
+  opacity: 0.95;
+}
+
+.appointmentBtn {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid var(--text-primary);
+  transition: var(--transition-smooth);
+}
+
+.appointmentBtn:hover {
+  background: var(--theme-gradient);
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 6px 16px var(--accent-teal-glow);
+  transform: translateY(-1px);
+}
+
+.activeAppointmentBtn {
+  background: var(--theme-gradient);
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 6px 16px var(--accent-teal-glow);
+}
+
+/* Hamburger button */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0;
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 4px;
+  transition: var(--transition-smooth);
+  transform-origin: left center;
+}
+
+.hamburgerActive .bar:nth-child(1) {
+  transform: rotate(45deg) translate(0, -1px);
+}
+
+.hamburgerActive .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburgerActive .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(0, 1px);
+}
+
+/* Mobile Nav Overlay */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 999;
+  pointer-events: auto;
+}
+
+.mobileMenuOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 80%;
+}
+
+.mobileNavLink {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 10px 24px;
+  border-radius: 50px;
+  transition: var(--transition-fast);
+  width: 100%;
+}
+
+.mobileNavLink:hover {
+  color: var(--accent-teal);
+  background: var(--accent-teal-light);
+}
+
+.mobileActiveNavLink {
+  color: var(--accent-teal);
+  background: var(--theme-gradient-light);
+}
+
+.mobileAppointmentBtn {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 50px;
+  margin-top: 12px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+}
+
+.mobileAppointmentBtn:hover {
+  background: var(--theme-gradient);
+  color: #ffffff;
+  box-shadow: 0 8px 24px var(--accent-teal-glow);
+  transform: translateY(-2px);
+}
+
+.mobileActiveAppointmentBtn {
+  background: var(--theme-gradient);
+  color: #ffffff;
+}
+
+/* Responsive Overrides */
+@media (max-width: 991px) {
+  .header {
+    padding: 16px 16px 8px 16px;
+  }
+  
+  .scrolled {
+    padding-top: 12px;
+    padding-bottom: 6px;
+  }
+
+  .container {
+    height: 60px;
+    padding: 0 20px;
+  }
+  
+  .scrolled .container {
+    height: 56px;
+  }
+}
+
+@media (min-width: 992px) {
+  .desktopNav {
+    display: flex;
+  }
+  
+  .hamburger {
+    display: none;
+  }
+  
+  .mobileMenu {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoIcon {
+    height: 36px;
+  }
+  
+  .logoText {
+    font-size: 1rem;
+  }
+  
+  .logoSub {
+    font-size: 0.65rem;
+  }
+}

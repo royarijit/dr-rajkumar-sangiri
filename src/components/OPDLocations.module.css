@@ -1,0 +1,215 @@
+.locations {
+  padding: 80px 0;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  position: relative;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--accent-teal);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 2rem;
+  color: var(--text-light);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.line {
+  width: 60px;
+  height: 3px;
+  background: var(--accent-teal);
+  margin-top: 16px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+}
+
+.introText {
+  max-width: 600px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-light-secondary);
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.card {
+  background: var(--bg-dark-accent);
+  border: 1px solid var(--border-dark);
+  border-radius: 24px;
+  padding: 32px;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-blue);
+  box-shadow: 0 12px 30px rgba(189, 34, 93, 0.1), 0 4px 15px rgba(59, 130, 246, 0.1);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.clinicInfo {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.locationPin {
+  width: 40px;
+  height: 40px;
+  background: var(--theme-gradient-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--accent-teal);
+}
+
+.clinicName {
+  font-size: 1.35rem;
+  color: var(--text-light);
+  font-weight: 700;
+}
+
+.clinicLocation {
+  font-size: 0.9rem;
+  color: var(--text-light-secondary);
+  margin-top: 4px;
+}
+
+.timingBox {
+  border-top: 1px solid var(--border-dark);
+  border-bottom: 1px solid var(--border-dark);
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.timingItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.timingLabel {
+  color: var(--text-light-secondary);
+  font-weight: 500;
+}
+
+.timingValue {
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.cardActions {
+  margin-top: 24px;
+}
+
+.callBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--accent-teal);
+  color: var(--text-light);
+  width: 100%;
+  padding: 14px 0;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+}
+
+.callBtn:hover {
+  background: var(--theme-gradient);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.25);
+}
+
+/* Notice Panel */
+.notice {
+  margin-top: 48px;
+  background: linear-gradient(135deg, rgba(189, 34, 93, 0.03) 0%, rgba(59, 130, 246, 0.03) 100%);
+  border: 1.5px solid rgba(189, 34, 93, 0.15);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.noticeIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.noticeText {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-light-secondary);
+}
+
+.noticeText strong {
+  color: var(--text-light);
+}
+
+/* Responsive Overrides */
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .locations {
+    padding: 100px 0;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}

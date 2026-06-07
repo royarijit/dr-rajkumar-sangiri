@@ -1,0 +1,293 @@
+.appointment {
+  padding: 80px 0;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--accent-teal);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 2rem;
+  color: var(--text-primary);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.line {
+  width: 60px;
+  height: 3px;
+  background: var(--accent-teal);
+  margin-top: 16px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+}
+
+.introText {
+  max-width: 600px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.formWrapper {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: 32px;
+  padding: 32px 24px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formGroupFull {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.input, .select, .textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1.5px solid var(--border-light);
+  border-radius: 16px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  transition: var(--transition-fast);
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--accent-teal);
+  background: var(--bg-primary);
+  box-shadow: 0 0 0 4px var(--accent-teal-glow);
+}
+
+.inputError {
+  border-color: #ef4444;
+}
+
+.inputError:focus {
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15);
+}
+
+.errorText {
+  font-size: 0.8rem;
+  color: #ef4444;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.submitBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--accent-teal);
+  color: var(--bg-primary);
+  border: none;
+  border-radius: 16px;
+  padding: 16px 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 25px var(--accent-teal-glow);
+  transition: var(--transition-smooth);
+}
+
+.submitBtn:hover {
+  background: var(--accent-teal-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(189, 34, 93, 0.25);
+}
+
+.submitBtn svg {
+  transition: var(--transition-fast);
+}
+
+.submitBtn:hover svg {
+  transform: translateX(4px);
+}
+
+/* Success Card Styling */
+.successCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.successIcon {
+  width: 72px;
+  height: 72px;
+  background: var(--accent-emerald-light);
+  color: var(--accent-emerald);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  animation: scale-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes scale-up {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.successTitle {
+  font-size: 1.6rem;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.successText {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+.summaryBox {
+  width: 100%;
+  max-width: 500px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.summaryTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  border-bottom: 1.5px solid var(--border-light);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--border-light);
+  font-size: 0.95rem;
+}
+
+.summaryRow:last-child {
+  border-bottom: none;
+}
+
+.summaryLabel {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.summaryValue {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.confirmationNotice {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+.resetBtn {
+  background: transparent;
+  color: var(--accent-teal);
+  border: 1.5px solid var(--accent-teal);
+  border-radius: 16px;
+  padding: 12px 32px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.resetBtn:hover {
+  background: var(--accent-teal-light);
+  transform: translateY(-2px);
+}
+
+/* Responsive Overrides */
+@media (min-width: 640px) {
+  .formGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .formGroupFull {
+    grid-column: span 2;
+  }
+  
+  .formWrapper {
+    padding: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .appointment {
+    padding: 100px 0;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+}
