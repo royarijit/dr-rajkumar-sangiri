@@ -141,34 +141,8 @@
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--text-secondary);
-  margin-bottom: 24px;
+  margin-bottom: 0;
   flex-grow: 1;
-}
-
-.cardFooter {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--text-primary);
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: var(--transition-fast);
-}
-
-.learnMore {
-  color: var(--text-primary);
-}
-
-.arrow {
-  transition: var(--transition-fast);
-}
-
-.card:hover .cardFooter {
-  color: var(--accent-teal);
-}
-
-.card:hover .arrow {
-  transform: translateX(4px);
 }
 
 /* Responsive Overrides */
