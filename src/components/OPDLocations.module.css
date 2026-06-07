@@ -87,6 +87,12 @@
   align-items: flex-start;
   gap: 16px;
 }
+.clinicImage {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
 
 .locationPin {
   width: 40px;

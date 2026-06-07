@@ -13,6 +13,7 @@ export default function About() {
             <h2 className={styles.title}>About Dr. Rajkumar Sangiri</h2>
             <div className={styles.line}></div>
           </div>
+          <img src="/satisfied-patient.png" alt="Satisfied Patient" className={styles.satisfiedImg} />
 
           <div className={styles.grid}>
             {/* Left Column: Biography & Philosophy */}

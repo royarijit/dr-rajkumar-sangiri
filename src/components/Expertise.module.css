@@ -145,6 +145,14 @@
   flex-grow: 1;
 }
 
+.serviceImage {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
 /* Responsive Overrides */
 @media (min-width: 640px) {
   .grid {

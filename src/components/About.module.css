@@ -32,6 +32,16 @@
   color: var(--text-primary);
   font-weight: 800;
   letter-spacing: -0.5px;
+} 
+
+.satisfiedImg {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  margin: 24px auto 0;
+  margin-bottom: 24px;
+  display: block;
 }
 
 .line {
@@ -222,5 +232,10 @@
   .grid {
     grid-template-columns: 1.1fr 0.9fr;
     gap: 64px;
+    .satisfiedImg {
+    width: 70%;
+    max-width: none;
+    margin-bottom: 24px;
   }
+}
 }

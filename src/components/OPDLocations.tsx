@@ -12,6 +12,7 @@ interface ClinicItem {
   timings: string;
   days: string;
   mapUrl: string;
+  image: string; // path to image in public/opds
 }
 
 export default function OPDLocations() {
@@ -24,7 +25,8 @@ export default function OPDLocations() {
       phoneDisplay: "80012 24488",
       timings: "04:00 PM - 06:00 PM",
       days: "Mon, Wed, Fri",
-      mapUrl: "https://maps.app.goo.gl/HKoVhEkg8vuc2tLG9"
+      mapUrl: "https://maps.app.goo.gl/HKoVhEkg8vuc2tLG9",
+      image: "meditrust.png"
     },
     {
       id: 2,
@@ -34,7 +36,8 @@ export default function OPDLocations() {
       phoneDisplay: "82938 37709",
       timings: "11:00 AM - 01:00 PM",
       days: "Mon, Tue, Thu",
-      mapUrl: "https://maps.app.goo.gl/XRS1ZDfceZEUM68u9"
+      mapUrl: "https://maps.app.goo.gl/XRS1ZDfceZEUM68u9",
+      image: "shristi.png"
     },
     {
       id: 3,
@@ -44,7 +47,8 @@ export default function OPDLocations() {
       phoneDisplay: "95642 80791",
       timings: "06:30 PM - 08:30 PM",
       days: "Tue, Thu, Sat",
-      mapUrl: "https://maps.app.goo.gl/GUFy5h2N5zfaGhYc7"
+      mapUrl: "https://maps.app.goo.gl/GUFy5h2N5zfaGhYc7",
+      image: "bankura-nursing-home.png"
     },
     {
       id: 4,
@@ -54,7 +58,8 @@ export default function OPDLocations() {
       phoneDisplay: "62945 75347",
       timings: "02:00 PM - 04:00 PM",
       days: "Wednesday, Saturday",
-      mapUrl: "https://maps.app.goo.gl/T5wnC9L1LbtjgLe26"
+      mapUrl: "https://maps.app.goo.gl/T5wnC9L1LbtjgLe26",
+      image: "keerthi.png"
     }
   ];
 
@@ -75,6 +80,7 @@ export default function OPDLocations() {
             {clinics.map((clinic) => (
               <div key={clinic.id} className={styles.card}>
                 <div className={styles.cardContent}>
+                  <img src={`/opds/${clinic.image}`} alt={clinic.name} className={styles.clinicImage} />
                   <div className={styles.clinicInfo}>
                     <div className={styles.locationPin}>
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
