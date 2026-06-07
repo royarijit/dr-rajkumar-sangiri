@@ -52,7 +52,7 @@ export default function Expertise() {
     },
     {
       id: 4,
-      title: "Gastrointestinal & G.I.",
+      title: "Gastrointestinal",
       subtitle: "Digestive Disorders",
       description: "Diagnostics and medical management of chronic acid reflux (GERD), bloating, indigestion, stomach ulcers, colitis, and bowel habit disturbances.",
       icon: (

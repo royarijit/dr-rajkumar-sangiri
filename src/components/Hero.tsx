@@ -1,14 +1,19 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "./Hero.module.css";
 
-const AnimatedCounter = ({ end, suffix = "", duration = 2000 }: { end: number; suffix?: string; duration?: number }) => {
+const AnimatedCounter = ({ end, suffix = "", duration = 2000, startCounting }: { end: number; suffix?: string; duration?: number; startCounting: boolean }) => {
   const [count, setCount] = useState(0);
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
+    if (!startCounting || hasAnimated.current) return;
+    hasAnimated.current = true;
+
     let startTime: number | null = null;
+    let rafId: number;
 
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
@@ -21,14 +26,16 @@ const AnimatedCounter = ({ end, suffix = "", duration = 2000 }: { end: number; s
       setCount(Math.floor(easeOutQuad * end));
 
       if (progress < duration) {
-        requestAnimationFrame(animate);
+        rafId = requestAnimationFrame(animate);
       } else {
         setCount(end);
       }
     };
 
-    requestAnimationFrame(animate);
-  }, [end, duration]);
+    rafId = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(rafId);
+  }, [startCounting, end, duration]);
 
   // Format numbers with commas (e.g. 10,000) for better readability
   const formattedCount = count >= 1000 ? count.toLocaleString() : count;
@@ -42,6 +49,39 @@ const AnimatedCounter = ({ end, suffix = "", duration = 2000 }: { end: number; s
 };
 
 export default function Hero() {
+  const [statsVisible, setStatsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    // If the section already has the 'active' class (e.g. already scrolled into view)
+    if (section.classList.contains("active")) {
+      setStatsVisible(true);
+      return;
+    }
+
+    // Watch for the 'active' class being added by the reveal scroll observer
+    const mutationObserver = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        if (
+          mutation.type === "attributes" &&
+          mutation.attributeName === "class" &&
+          section.classList.contains("active")
+        ) {
+          setStatsVisible(true);
+          mutationObserver.disconnect();
+          break;
+        }
+      }
+    });
+
+    mutationObserver.observe(section, { attributes: true, attributeFilter: ["class"] });
+
+    return () => mutationObserver.disconnect();
+  }, []);
+
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     const element = document.getElementById(targetId);
@@ -60,7 +100,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className={`${styles.hero} reveal`}>
+    <section id="hero" className={`${styles.hero} reveal`} ref={sectionRef}>
       {/* Decorative Gradients */}
       <div className={styles.glow1}></div>
       <div className={styles.glow2}></div>
@@ -118,28 +158,28 @@ export default function Hero() {
           <div className={styles.stats}>
             <div className={styles.statItem}>
               <span className={styles.statNumber}>
-                <AnimatedCounter end={19} suffix="+" />
+                <AnimatedCounter end={19} suffix="+" startCounting={statsVisible} />
               </span>
               <span className={styles.statLabel}>Years of Experience</span>
             </div>
             <div className={styles.statDivider}></div>
             <div className={styles.statItem}>
               <span className={styles.statNumber}>
-                <AnimatedCounter end={4} suffix="+" />
+                <AnimatedCounter end={4} suffix="+" startCounting={statsVisible} />
               </span>
               <span className={styles.statLabel}>OPD Locations</span>
             </div>
             <div className={styles.statDivider}></div>
             <div className={styles.statItem}>
               <span className={styles.statNumber}>
-                <AnimatedCounter end={10000} suffix="+" />
+                <AnimatedCounter end={10000} suffix="+" startCounting={statsVisible} />
               </span>
               <span className={styles.statLabel}>Satisfied Patients</span>
             </div>
             <div className={styles.statDivider}></div>
             <div className={styles.statItem}>
               <span className={styles.statNumber}>
-                <AnimatedCounter end={100} suffix="%" />
+                <AnimatedCounter end={100} suffix="%" startCounting={statsVisible} />
               </span>
               <span className={styles.statLabel}>Dedicated Patient Care</span>
             </div>
