@@ -5,12 +5,7 @@
   align-items: center;
   padding-top: calc(var(--header-height-mobile) + 40px);
   padding-bottom: 60px;
-  background: 
-    linear-gradient(135deg, rgba(252, 231, 243, 0.88) 0%, rgba(224, 242, 254, 0.92) 100%),
-    url('/sthethoscope.jpg');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: linear-gradient(135deg, rgba(252, 231, 243, 0.88) 0%, rgba(224, 242, 254, 0.92) 100%);
   background-color: var(--bg-primary);
   overflow: hidden;
 }
