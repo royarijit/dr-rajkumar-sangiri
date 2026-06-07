@@ -29,7 +29,7 @@ export default function Appointment() {
     "Meditrust Medicare, Bankura",
     "Sristi Diagnostic Centre, Bankura",
     "Bankura Nursing Home, Bankura",
-    "Keerteni Medipoint, Bankura"
+    "Keerthi Medipoint, Bankura"
   ];
 
   const timeSlots = [

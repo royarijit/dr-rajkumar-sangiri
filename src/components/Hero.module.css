@@ -150,20 +150,25 @@
 }
 
 .secondaryBtn {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: var(--text-primary);
-  border: 1.5px solid var(--border-light);
+  border: 1.5px solid rgba(189, 34, 93, 0.25);
   padding: 16px 32px;
   border-radius: 50px;
   font-weight: 600;
   text-align: center;
+  box-shadow: var(--shadow-sm);
   transition: var(--transition-smooth);
 }
 
 .secondaryBtn:hover {
-  border-color: var(--text-primary);
-  background: var(--bg-secondary);
+  border-color: var(--accent-teal);
+  background: var(--bg-primary);
+  color: var(--accent-teal);
   transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
 }
 
 /* Stats section */

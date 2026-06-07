@@ -44,7 +44,7 @@ export default function OPDLocations() {
     },
     {
       id: 4,
-      name: "Keerteni Medipoint",
+      name: "Keerthi Medipoint",
       location: "Katjuridanga, Bankura, West Bengal",
       phone: "6294575347",
       phoneDisplay: "62945 75347",
