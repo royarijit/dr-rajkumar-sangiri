@@ -78,6 +78,14 @@ export default function Header() {
           </div>
         </a>
 
+        <a 
+          href="#appointment" 
+          className={styles.navAppointmentBtnMobile} 
+          onClick={(e) => handleLinkClick(e, "appointment")}
+        >
+          Get Appointment
+        </a>
+
         {/* Desktop Menu */}
         <nav className={styles.desktopNav}>
           <a 
@@ -125,6 +133,9 @@ export default function Header() {
       {/* Mobile Menu Overlay (Moved outside container to avoid containment clipping) */}
       <div className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.mobileMenuOpen : ""}`}>
         <nav className={styles.mobileNav}>
+          <div className={styles.mobileMenuLogoContainer}>
+            <img src="/sthethoscope.jpg" alt="Stethoscope Logo" className={styles.mobileMenuStethoscope} />
+          </div>
           <a 
             href="#about" 
             className={`${styles.mobileNavLink} ${activeSection === "about" ? styles.mobileActiveNavLink : ""}`} 

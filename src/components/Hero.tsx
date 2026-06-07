@@ -1,8 +1,45 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./Hero.module.css";
+
+const AnimatedCounter = ({ end, suffix = "", duration = 2000 }: { end: number; suffix?: string; duration?: number }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let startTime: number | null = null;
+
+    const animate = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = timestamp - startTime;
+      const percentage = Math.min(progress / duration, 1);
+      
+      // Easing function (easeOutQuad)
+      const easeOutQuad = percentage * (2 - percentage);
+      
+      setCount(Math.floor(easeOutQuad * end));
+
+      if (progress < duration) {
+        requestAnimationFrame(animate);
+      } else {
+        setCount(end);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [end, duration]);
+
+  // Format numbers with commas (e.g. 10,000) for better readability
+  const formattedCount = count >= 1000 ? count.toLocaleString() : count;
+
+  return (
+    <>
+      {formattedCount}
+      {suffix}
+    </>
+  );
+};
 
 export default function Hero() {
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
@@ -23,7 +60,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className={styles.hero}>
+    <section id="hero" className={`${styles.hero} reveal`}>
       {/* Decorative Gradients */}
       <div className={styles.glow1}></div>
       <div className={styles.glow2}></div>
@@ -34,8 +71,26 @@ export default function Hero() {
             <span className={styles.badge}>MD (General Medicine)</span>
           </div>
 
-          <h1 className={styles.title}>
+          <div className={styles.prefixContainer}>
             <span className={styles.prefix}>Trusted Care for a Healthier Life</span>
+          </div>
+
+          {/* Mobile Profile Photo - visible only on mobile/tablet */}
+          <div className={styles.mobileImageContainer}>
+            <div className={styles.imageWrapper}>
+              <div className={styles.imageBg}></div>
+              <Image 
+                src="/doctor-profile-pic.png" 
+                alt="Dr. Rajkumar Sangiri Profile Picture" 
+                width={360} 
+                height={480} 
+                priority
+                className={styles.image}
+              />
+            </div>
+          </div>
+
+          <h1 className={styles.title}>
             <span className={styles.name}>Dr. Rajkumar Sangiri</span>
           </h1>
 
@@ -62,17 +117,30 @@ export default function Hero() {
 
           <div className={styles.stats}>
             <div className={styles.statItem}>
-              <span className={styles.statNumber}>19+</span>
+              <span className={styles.statNumber}>
+                <AnimatedCounter end={19} suffix="+" />
+              </span>
               <span className={styles.statLabel}>Years of Experience</span>
             </div>
             <div className={styles.statDivider}></div>
             <div className={styles.statItem}>
-              <span className={styles.statNumber}>4+</span>
+              <span className={styles.statNumber}>
+                <AnimatedCounter end={4} suffix="+" />
+              </span>
               <span className={styles.statLabel}>OPD Locations</span>
             </div>
             <div className={styles.statDivider}></div>
             <div className={styles.statItem}>
-              <span className={styles.statNumber}>100%</span>
+              <span className={styles.statNumber}>
+                <AnimatedCounter end={10000} suffix="+" />
+              </span>
+              <span className={styles.statLabel}>Satisfied Patients</span>
+            </div>
+            <div className={styles.statDivider}></div>
+            <div className={styles.statItem}>
+              <span className={styles.statNumber}>
+                <AnimatedCounter end={100} suffix="%" />
+              </span>
               <span className={styles.statLabel}>Dedicated Patient Care</span>
             </div>
           </div>

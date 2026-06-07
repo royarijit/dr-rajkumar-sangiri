@@ -88,7 +88,7 @@
   font-size: 1.15rem;
   font-weight: 800;
   letter-spacing: -0.3px;
-  color: var(--text-primary);
+  color: var(--accent-blue);
   line-height: 1.1;
   transition: var(--transition-fast);
 }
@@ -236,6 +236,20 @@
   width: 80%;
 }
 
+.mobileMenuLogoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.mobileMenuStethoscope {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+}
+
 .mobileNavLink {
   font-family: var(--font-outfit), sans-serif;
   font-size: 1.6rem;
@@ -285,6 +299,28 @@
   color: #ffffff;
 }
 
+.navAppointmentBtnMobile {
+  background: var(--accent-teal-light);
+  color: var(--accent-teal);
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(189, 34, 93, 0.08);
+  transition: var(--transition-smooth);
+  text-align: center;
+  white-space: nowrap;
+  border: 1px solid rgba(189, 34, 93, 0.15);
+}
+
+.navAppointmentBtnMobile:hover {
+  background: var(--accent-teal);
+  color: #ffffff;
+  border-color: transparent;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(189, 34, 93, 0.2);
+}
+
 /* Responsive Overrides */
 @media (max-width: 991px) {
   .header {
@@ -316,6 +352,10 @@
   }
   
   .mobileMenu {
+    display: none;
+  }
+  
+  .navAppointmentBtnMobile {
     display: none;
   }
 }

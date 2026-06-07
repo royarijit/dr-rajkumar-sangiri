@@ -96,12 +96,30 @@
   margin-bottom: 24px;
 }
 
+.prefixContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .prefix {
   font-size: 1.1rem;
   color: var(--accent-teal);
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-weight: 600;
+}
+
+.mobileImageContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.mobileImageContainer .imageWrapper {
+  max-width: 320px;
 }
 
 .name {
@@ -212,7 +230,7 @@
 
 /* Right Column: Doctor Portrait */
 .imageContainer {
-  display: flex;
+  display: none;
   justify-content: center;
   position: relative;
   animation: fadeIn 1.2s ease forwards;
@@ -295,6 +313,14 @@
     text-align: left;
   }
   
+  .prefixContainer {
+    justify-content: flex-start;
+  }
+  
+  .mobileImageContainer {
+    display: none;
+  }
+  
   .badgeContainer {
     justify-content: flex-start;
   }
@@ -313,7 +339,23 @@
     padding: 16px 36px;
   }
   
+  .imageContainer {
+    display: flex;
+  }
+  
   .imageWrapper {
     max-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 16px;
+  }
+  
+  .statDivider {
+    display: none;
   }
 }
