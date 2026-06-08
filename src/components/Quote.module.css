@@ -1,0 +1,199 @@
+.quoteSection {
+  position: relative;
+  padding: 100px 0;
+  background-color: var(--bg-primary);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(189, 34, 93, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 50px 70px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(189, 34, 93, 0.08);
+  border-radius: 32px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.03), 0 1px 3px rgba(15, 23, 42, 0.02);
+  transition: var(--transition-smooth);
+}
+
+.wrapper:hover {
+  transform: translateY(-4px);
+  border-color: rgba(189, 34, 93, 0.15);
+  box-shadow: 0 30px 60px rgba(189, 34, 93, 0.05), 0 20px 40px rgba(15, 23, 42, 0.04);
+}
+
+.quoteMarkLeft, .quoteMarkRight {
+  position: absolute;
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 9rem;
+  line-height: 1;
+  color: rgba(189, 34, 93, 0.06);
+  user-select: none;
+  font-weight: 900;
+  transition: var(--transition-smooth);
+}
+
+.quoteMarkLeft {
+  top: -10px;
+  left: 20px;
+}
+
+.quoteMarkRight {
+  bottom: -60px;
+  right: 20px;
+}
+
+.wrapper:hover .quoteMarkLeft {
+  transform: scale(1.08) translateY(-5px);
+  color: rgba(189, 34, 93, 0.09);
+}
+
+.wrapper:hover .quoteMarkRight {
+  transform: scale(1.08) translateY(5px);
+  color: rgba(189, 34, 93, 0.09);
+}
+
+.quoteContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.mainQuote {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+  background: var(--theme-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subQuote {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  font-style: italic;
+  max-width: 760px;
+}
+
+.authorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.line {
+  width: 50px;
+  height: 2px;
+  background: var(--accent-teal);
+  margin-bottom: 20px;
+  border-radius: 1px;
+  opacity: 0.4;
+  transition: var(--transition-smooth);
+}
+
+.wrapper:hover .line {
+  width: 80px;
+  opacity: 0.8;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.name {
+  font-family: var(--font-cursive), cursive;
+  font-size: 2.6rem;
+  color: var(--accent-teal);
+  line-height: 1;
+}
+
+.title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .quoteSection {
+    padding: 70px 0;
+  }
+  
+  .wrapper {
+    padding: 36px 24px;
+    border-radius: 24px;
+  }
+  
+  .mainQuote {
+    font-size: 1.75rem;
+  }
+  
+  .subQuote {
+    font-size: 1.05rem;
+  }
+  
+  .quoteMarkLeft, .quoteMarkRight {
+    font-size: 6rem;
+  }
+  
+  .quoteMarkLeft {
+    top: -5px;
+    left: 10px;
+  }
+  
+  .quoteMarkRight {
+    bottom: -40px;
+    right: 10px;
+  }
+  
+  .name {
+    font-size: 2.2rem;
+  }
+  
+  .title {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+  }
+}

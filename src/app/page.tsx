@@ -3,6 +3,7 @@
 import React, { useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Quote from "@/components/Quote";
 import About from "@/components/About";
 import Expertise from "@/components/Expertise";
 import OPDLocations from "@/components/OPDLocations";
@@ -42,6 +43,7 @@ export default function Home() {
       <Header />
       <main style={{ minHeight: "100vh" }}>
         <Hero />
+        <Quote />
         <About />
         <Expertise />
         <OPDLocations />
