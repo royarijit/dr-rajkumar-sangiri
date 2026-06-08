@@ -50,36 +50,28 @@ const AnimatedCounter = ({ end, suffix = "", duration = 2000, startCounting }: {
 
 export default function Hero() {
   const [statsVisible, setStatsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
+    const statsEl = statsRef.current;
+    if (!statsEl) return;
 
-    // If the section already has the 'active' class (e.g. already scrolled into view)
-    if (section.classList.contains("active")) {
-      setStatsVisible(true);
-      return;
-    }
-
-    // Watch for the 'active' class being added by the reveal scroll observer
-    const mutationObserver = new MutationObserver((mutations) => {
-      for (const mutation of mutations) {
-        if (
-          mutation.type === "attributes" &&
-          mutation.attributeName === "class" &&
-          section.classList.contains("active")
-        ) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
           setStatsVisible(true);
-          mutationObserver.disconnect();
-          break;
+          observer.disconnect();
         }
+      },
+      {
+        rootMargin: "0px 0px -25% 0px",
+        threshold: 0.1
       }
-    });
+    );
 
-    mutationObserver.observe(section, { attributes: true, attributeFilter: ["class"] });
+    observer.observe(statsEl);
 
-    return () => mutationObserver.disconnect();
+    return () => observer.disconnect();
   }, []);
 
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
@@ -100,7 +92,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className={`${styles.hero} reveal`} ref={sectionRef}>
+    <section id="hero" className={`${styles.hero} reveal`}>
       {/* Decorative Gradients */}
       <div className={styles.glow1}></div>
       <div className={styles.glow2}></div>
@@ -155,7 +147,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className={styles.stats}>
+          <div className={styles.stats} ref={statsRef}>
             <div className={styles.statItem}>
               <span className={styles.statNumber}>
                 <AnimatedCounter end={19} suffix="+" startCounting={statsVisible} />
@@ -172,7 +164,7 @@ export default function Hero() {
             <div className={styles.statDivider}></div>
             <div className={styles.statItem}>
               <span className={styles.statNumber}>
-                <AnimatedCounter end={10000} suffix="+" startCounting={statsVisible} />
+                <AnimatedCounter end={10} suffix="K+" startCounting={statsVisible} />
               </span>
               <span className={styles.statLabel}>Satisfied Patients</span>
             </div>

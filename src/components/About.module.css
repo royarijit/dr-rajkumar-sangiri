@@ -83,34 +83,6 @@
   font-weight: 600;
 }
 
-.philosophyQuote {
-  margin-top: 24px;
-  padding: 24px;
-  background: var(--bg-primary);
-  border-left: 4px solid var(--accent-teal);
-  border-radius: 0 16px 16px 0;
-  position: relative;
-  box-shadow: var(--shadow-sm);
-}
-
-.quoteIcon {
-  position: absolute;
-  top: 5px;
-  left: 16px;
-  font-size: 3rem;
-  color: var(--accent-teal-light);
-  line-height: 1;
-  font-family: var(--font-outfit), Georgia, serif;
-}
-
-.quoteText {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--text-secondary);
-  font-style: italic;
-  position: relative;
-  z-index: 1;
-}
 
 /* Right Column Cards */
 .details {

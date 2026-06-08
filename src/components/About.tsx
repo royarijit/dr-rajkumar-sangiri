@@ -25,13 +25,6 @@ export default function About() {
               <p className={styles.bioText}>
                 His medical practice is founded on trust, transparent communication, and thorough diagnostic assessment. He believes in treating not just the symptoms, but working collaboratively with patients to manage their overall wellness and lifestyle health.
               </p>
-              
-              <div className={styles.philosophyQuote}>
-                <span className={styles.quoteIcon}>“</span>
-                <p className={styles.quoteText}>
-                  My commitment is to offer precise diagnosis and compassionate, patient-first care, ensuring every individual gets the time and attention they deserve.
-                </p>
-              </div>
             </div>
 
             {/* Right Column: Qualifications & Registrations */}
