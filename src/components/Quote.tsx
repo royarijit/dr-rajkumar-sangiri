@@ -14,11 +14,8 @@ export default function Quote() {
           <div className={styles.quoteMarkLeft}>&ldquo;</div>
           
           <div className={styles.quoteContent}>
-            <p className={styles.mainQuote}>
-              I believe, medicine is more than a career, it is a love for humanity.
-            </p>
-            <p className={styles.subQuote}>
-              My desire to offer precise diagnosis, compassionate to my patients, want to educate, guide in right direction, and try to be accessible when they really need me in their crisis period.
+            <p className={styles.quoteText}>
+              I believe, medicine is more than a career, it is a love for humanity. My desire is to offer precise diagnosis, compassionate to my patients, want to educate, guide in right direction, and try to be accessible when they really need me in their crisis period.
             </p>
             
             <div className={styles.authorContainer}>
