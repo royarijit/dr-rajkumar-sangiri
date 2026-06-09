@@ -9,7 +9,6 @@ export default function About() {
       <div className={styles.about}>
         <div className={styles.container}>
           <div className={styles.header}>
-            <span className={styles.subtitle}>Who We Are</span>
             <h2 className={styles.title}>About Dr. Rajkumar Sangiri</h2>
             <div className={styles.line}></div>
           </div>

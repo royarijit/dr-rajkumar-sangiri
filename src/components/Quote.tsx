@@ -12,12 +12,12 @@ export default function Quote() {
         <div className={styles.wrapper}>
           {/* Decorative double quotes */}
           <div className={styles.quoteMarkLeft}>&ldquo;</div>
-          
+
           <div className={styles.quoteContent}>
             <p className={styles.quoteText}>
-              I believe, medicine is more than a career, it is a love for humanity. My desire is to offer precise diagnosis, compassionate to my patients, want to educate, guide in right direction, and try to be accessible when they really need me in their crisis period.
+              <strong className={styles.highlight}>I believe, medicine is more than a career, it is a love for humanity.</strong><br /> My desire is to offer precise diagnosis, compassionate to my patients, want to educate, guide in right direction, and try to be accessible when they really need me in their crisis period.
             </p>
-            
+
             <div className={styles.authorContainer}>
               <div className={styles.line}></div>
               <cite className={styles.author}>
@@ -26,7 +26,7 @@ export default function Quote() {
               </cite>
             </div>
           </div>
-          
+
           <div className={styles.quoteMarkRight}>&rdquo;</div>
         </div>
       </div>

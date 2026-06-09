@@ -97,6 +97,11 @@
   max-width: 760px;
 }
 
+.highlight {
+  color: var(--accent-teal);
+  font-weight: 700;
+}
+
 .authorContainer {
   display: flex;
   flex-direction: column;
