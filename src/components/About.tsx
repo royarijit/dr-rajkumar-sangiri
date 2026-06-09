@@ -9,7 +9,8 @@ export default function About() {
       <div className={styles.about}>
         <div className={styles.container}>
           <div className={styles.header}>
-            <h2 className={styles.title}>About Dr. Rajkumar Sangiri</h2>
+            <h2 className={styles.titleAbout}>About</h2>
+            <h2 className={styles.title}>Dr. Rajkumar Sangiri</h2>
             <div className={styles.line}></div>
           </div>
           <img src="/satisfied-patient.png" alt="Satisfied Patient" className={styles.satisfiedImg} />
