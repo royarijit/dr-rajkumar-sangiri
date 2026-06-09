@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Outfit, Great_Vibes } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -75,6 +76,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable} ${greatVibes.variable}`}>
       <body>
+        {/* Google Analytics (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-QLMZTSNG1G"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-QLMZTSNG1G');
+          `}
+        </Script>
         {children}
         <script
           type="application/ld+json"
