@@ -15,7 +15,7 @@
   transform: translate(-50%, -50%);
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(189, 34, 93, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
   border-radius: 50%;
   z-index: 0;
   pointer-events: none;
@@ -39,7 +39,7 @@
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(189, 34, 93, 0.08);
+  border: 1px solid rgba(13, 148, 136, 0.08);
   border-radius: 32px;
   box-shadow: 0 20px 40px rgba(15, 23, 42, 0.03), 0 1px 3px rgba(15, 23, 42, 0.02);
   transition: var(--transition-smooth);
@@ -47,8 +47,8 @@
 
 .wrapper:hover {
   transform: translateY(-4px);
-  border-color: rgba(189, 34, 93, 0.15);
-  box-shadow: 0 30px 60px rgba(189, 34, 93, 0.05), 0 20px 40px rgba(15, 23, 42, 0.04);
+  border-color: rgba(13, 148, 136, 0.15);
+  box-shadow: 0 30px 60px rgba(13, 148, 136, 0.05), 0 20px 40px rgba(15, 23, 42, 0.04);
 }
 
 .quoteMarkLeft, .quoteMarkRight {
@@ -56,7 +56,7 @@
   font-family: var(--font-outfit), sans-serif;
   font-size: 9rem;
   line-height: 1;
-  color: rgba(189, 34, 93, 0.06);
+  color: rgba(13, 148, 136, 0.06);
   user-select: none;
   font-weight: 900;
   transition: var(--transition-smooth);
@@ -74,12 +74,12 @@
 
 .wrapper:hover .quoteMarkLeft {
   transform: scale(1.08) translateY(-5px);
-  color: rgba(189, 34, 93, 0.09);
+  color: rgba(13, 148, 136, 0.09);
 }
 
 .wrapper:hover .quoteMarkRight {
   transform: scale(1.08) translateY(5px);
-  color: rgba(189, 34, 93, 0.09);
+  color: rgba(13, 148, 136, 0.09);
 }
 
 .quoteContent {

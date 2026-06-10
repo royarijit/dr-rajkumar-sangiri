@@ -12,14 +12,14 @@
   --text-light: #f8fafc;
   --text-light-secondary: #cbd5e1;
 
-  --accent-teal: #bd225d; /* Plum Pink accent */
-  --accent-teal-hover: #9e164a;
-  --accent-teal-light: #fce7f3;
-  --accent-teal-glow: rgba(189, 34, 93, 0.15);
+  --accent-teal: #0d9488; /* Teal accent */
+  --accent-teal-hover: #0f766e;
+  --accent-teal-light: #ccfbf1;
+  --accent-teal-glow: rgba(13, 148, 136, 0.15);
 
-  --accent-blue: #3b82f6; /* Hint of light blue */
-  --accent-blue-hover: #1d4ed8;
-  --accent-blue-light: #e0f2fe;
+  --accent-blue: #1e40af; /* Deep Royal Blue accent */
+  --accent-blue-hover: #1e3a8a;
+  --accent-blue-light: #dbeafe;
   
   --theme-gradient: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-blue) 100%);
   --theme-gradient-light: linear-gradient(135deg, var(--accent-teal-light) 0%, var(--accent-blue-light) 100%);
@@ -118,10 +118,10 @@ button, input, select, textarea {
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(189, 34, 93, 0.4);
+    box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.4);
   }
   50% {
-    box-shadow: 0 0 0 10px rgba(189, 34, 93, 0);
+    box-shadow: 0 0 0 10px rgba(13, 148, 136, 0);
   }
 }
 

@@ -301,13 +301,13 @@
 
 @keyframes rippleGlow {
   0% {
-    box-shadow: 0 8px 25px rgba(189, 34, 93, 0.25), 0 0 0 0 rgba(189, 34, 93, 0.5);
+    box-shadow: 0 8px 25px rgba(13, 148, 136, 0.25), 0 0 0 0 rgba(13, 148, 136, 0.5);
   }
   50% {
-    box-shadow: 0 10px 30px rgba(189, 34, 93, 0.35), 0 0 0 14px rgba(189, 34, 93, 0);
+    box-shadow: 0 10px 30px rgba(13, 148, 136, 0.35), 0 0 0 14px rgba(13, 148, 136, 0);
   }
   100% {
-    box-shadow: 0 8px 25px rgba(189, 34, 93, 0.25), 0 0 0 0 rgba(189, 34, 93, 0);
+    box-shadow: 0 8px 25px rgba(13, 148, 136, 0.25), 0 0 0 0 rgba(13, 148, 136, 0);
   }
 }
 
@@ -317,7 +317,7 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 998;
-  background: rgba(189, 34, 93, 0.96);
+  background: rgba(13, 148, 136, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   color: #ffffff;
@@ -337,7 +337,7 @@
 }
 
 .floatingAppointmentBtnMobile:hover {
-  background: rgba(189, 34, 93, 0.99);
+  background: rgba(13, 148, 136, 0.99);
   transform: translateX(-50%) translateY(-2px);
 }
 

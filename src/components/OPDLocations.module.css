@@ -73,7 +73,7 @@
 .card:hover {
   transform: translateY(-8px);
   border-color: var(--accent-blue);
-  box-shadow: 0 12px 30px rgba(189, 34, 93, 0.1), 0 4px 15px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 12px 30px rgba(13, 148, 136, 0.1), 0 4px 15px rgba(30, 64, 175, 0.1);
 }
 
 .cardContent {
@@ -175,7 +175,7 @@
 .callBtn:hover {
   background: var(--theme-gradient);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(189, 34, 93, 0.25);
+  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.25);
 }
 
 .mapBtn {
@@ -196,7 +196,7 @@
 
 .mapBtn:hover {
   border-color: var(--accent-blue);
-  background: rgba(59, 130, 246, 0.08);
+  background: rgba(30, 64, 175, 0.08);
   color: #ffffff;
   transform: translateY(-2px);
 }
@@ -204,8 +204,8 @@
 /* Notice Panel */
 .notice {
   margin-top: 48px;
-  background: linear-gradient(135deg, rgba(189, 34, 93, 0.03) 0%, rgba(59, 130, 246, 0.03) 100%);
-  border: 1.5px solid rgba(189, 34, 93, 0.15);
+  background: linear-gradient(135deg, rgba(13, 148, 136, 0.03) 0%, rgba(30, 64, 175, 0.03) 100%);
+  border: 1.5px solid rgba(13, 148, 136, 0.15);
   border-radius: 20px;
   padding: 24px;
   display: flex;
