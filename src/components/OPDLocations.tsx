@@ -23,8 +23,8 @@ export default function OPDLocations() {
       location: "Bankura Town, West Bengal",
       phone: "8001224488",
       phoneDisplay: "80012 24488",
-      timings: "04:00 PM - 06:00 PM",
-      days: "Mon, Wed, Fri",
+      timings: "5:00 PM",
+      days: "Mon, Wed, Thu, Fri",
       mapUrl: "https://maps.app.goo.gl/HKoVhEkg8vuc2tLG9",
       image: "meditrust.png"
     },
@@ -34,8 +34,8 @@ export default function OPDLocations() {
       location: "Lalbazar, Bankura, West Bengal",
       phone: "8293837709",
       phoneDisplay: "82938 37709",
-      timings: "11:00 AM - 01:00 PM",
-      days: "Mon, Tue, Thu",
+      timings: "Tue, Fri: 9:00 AM | Thu: 4:00 PM",
+      days: "Tue, Thu, Fri",
       mapUrl: "https://maps.app.goo.gl/XRS1ZDfceZEUM68u9",
       image: "shristi.png"
     },
@@ -45,8 +45,8 @@ export default function OPDLocations() {
       location: "Nutanchati, Bankura, West Bengal",
       phone: "9564280791",
       phoneDisplay: "95642 80791",
-      timings: "06:30 PM - 08:30 PM",
-      days: "Tue, Thu, Sat",
+      timings: "11:00 AM",
+      days: "Mon, Thu, Fri",
       mapUrl: "https://maps.app.goo.gl/GUFy5h2N5zfaGhYc7",
       image: "bankura-nursing-home.png"
     },
@@ -56,8 +56,8 @@ export default function OPDLocations() {
       location: "Katjuridanga, Bankura, West Bengal",
       phone: "6294575347",
       phoneDisplay: "62945 75347",
-      timings: "02:00 PM - 04:00 PM",
-      days: "Wednesday, Saturday",
+      timings: "6:30 PM",
+      days: "Mon, Wed, Thu, Fri",
       mapUrl: "https://maps.app.goo.gl/T5wnC9L1LbtjgLe26",
       image: "keerthi.png"
     }

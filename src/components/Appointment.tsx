@@ -33,10 +33,11 @@ export default function Appointment() {
   ];
 
   const timeSlots = [
-    "Morning (11:00 AM - 01:00 PM)",
-    "Afternoon (02:00 PM - 04:00 PM)",
-    "Evening (04:00 PM - 06:00 PM)",
-    "Night (06:30 PM - 08:30 PM)"
+    "9:00 AM",
+    "11:00 AM",
+    "4:00 PM",
+    "5:00 PM",
+    "6:30 PM"
   ];
 
   const validate = () => {
